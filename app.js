@@ -1,15 +1,23 @@
-'user strict';
+'use strict';
 
-var 1stPike = {
+var firstPike = {
 name: '1st and Pike',
 minNumCust: 23,
 maxNumCust: 65,
 avgNumCookiesCust: 6.3,
 
 };
-1stPike.Math.floor(Math.random() * (65 - 23) + 23);
 
-var
+firstPikeRandCust = function(){
+return Math.floor(Math.random() * (65 - 23) + 23);
+};
+console.log(firstPikeRandCust());
+var firstPikeSimSales = firstPikeRandCust() * firstPike.avgNumCookiesCust;
+console.log(firstPikeSimSales);
+
+//var 1stPikeSimSales = 1stPikeRandCust * 1stPike.avgNumCookiesCust;
+//console.log(1stPikeSimSales);
+
 
 var SeaTac = {
 name: 'SeaTac Airport',
