@@ -3,10 +3,10 @@
 var hours = ['6 AM: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
 
 function CookieStore(name, minCust, maxCust, avgCookies, ) {
-  this.name = name;
-  this.minCust = minCust;
-  this.maxCust = maxCust;
-  this.avgCookies = avgCookies;
+  this.name = '1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki';
+  this.minCust = 23, 3, 11, 20, 2;
+  this.maxCust = 65, 24, 38, 38, 16;
+  this.avgCookies = 6.3, 1.2, 3.7, 2.3, 4.6;
   this.avgSimCookies = [];
 
   this.randCust = function() {
@@ -15,25 +15,17 @@ function CookieStore(name, minCust, maxCust, avgCookies, ) {
   this.eachHrSales = function() {
     for (var i = 0; i < 14; i++) {
       var hrSales = Math.ceil(this.randCust() * this.avgCookies);
-      this.avgSimCookies.push(Math.ceil(eachHrSales(i)))
+      this.avgSimCookies.push(Math.ceil(hrSales);
       }
     };
-
-  eachHrSales: function () {
-    this.avgSimCookies = [];
-  for (var i = 0; i < 2; i++) {
-    var hrSales = Math.ceil(this.randCust() * this.avgNumCookiesCust);
-    this.avgSimCookies.push(Math.ceil.(eachHrSales));
-    console.log(eachHrSales);
-    }
-  },
-
-  salesReport: function () {
-    for (var i = 0; i < this.hoursOp.length; i++) {
-    var pikeRandomSales = this.eachHrSales();
+  this.salesReport = function () {
+    for (var i = 0; i < hours.length; i++) {
+    var randomSales = this.eachHrSales(i);
     this.avgSimCookies.push(this.hoursOp[i] + pikeRandomSales + ' cookies');
-    console.log(this.eachHrSales());
-
+      }
+    };
+CookieStore.name
+//call the functions!!!
 
     var listItems = document.create.Element('li');
     listItems.innerText = "Total: " + this.total + 'cookies';
