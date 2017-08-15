@@ -9,31 +9,30 @@ avgSimCookies: [],
 hoursOp: ['6 AM: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '],
 total: 0,
 
-  firstPikeRandCust: function() {
+  randCust: function() {
   return Math.floor(Math.random() * (this.maxNumCust - this.minNumCust) + this.minNumCust);
   },
 
-  firstPikeEachHrSales: function () {
+  eachHrSales: function () {
   for (var i = 0; i < 2; i++) {
-    var eachHrSales = Math.ceil(this.firstPikeRandCust() * this.avgNumCookiesCust);
-    this.avgSimCookies.push(eachHrSales);
-    console.log(eachHrSales);
+    var hrSales = Math.ceil(this.randCust() * this.avgNumCookiesCust);
+    this.avgSimCookies.push(hrSales);
+    console.log(hrSales);
     }
   },
 
-  firstPikeSalesReport: function () {
+  salesReport: function () {
     for (var i = 0; i < this.hoursOp.length; i++) {
-    var pikeRandomSales = this.firstPikeEachHrSales();
+    var pikeRandomSales = this.eachHrSales();
     this.avgSimCookies.push(this.hoursOp[i] + pikeRandomSales + ' cookies');
-    console.log(this.firstPikeEachHrSales());
+    console.log(this.eachHrSales());
 
-    this.total+=pikeRandomSales;
-    //console.log(pikeRandomSales);
+//    this.total+=pikeRandomSales;
     }
   },
 };
 
-firstPike.firstPikeSalesReport();
+firstPike.salesReport();
 //firstPike.hoursOp[];
 
 /*var newLi = document.createElement('li');
