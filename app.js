@@ -5,6 +5,7 @@ name: '1st and Pike',
 minNumCust: 23,
 maxNumCust: 65,
 avgNumCookiesCust: 6.3,
+avgSimCookies: [],
 
 };
 
@@ -12,8 +13,15 @@ firstPikeRandCust = function(){
 return Math.floor(Math.random() * (65 - 23) + 23);
 };
 console.log(firstPikeRandCust());
+
+
 var firstPikeSimSales = firstPikeRandCust() * firstPike.avgNumCookiesCust;
 console.log(firstPikeSimSales);
+for (i = 0; i < 15; i++) {
+
+  var firstPikeEachHrSales = firstPike.avgNumCookiesCust * firstPike.avgSimCookies;
+  return avgSimCookies
+}
 
 //var 1stPikeSimSales = 1stPikeRandCust * 1stPike.avgNumCookiesCust;
 //console.log(1stPikeSimSales);
