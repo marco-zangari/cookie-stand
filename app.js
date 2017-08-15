@@ -7,25 +7,18 @@ maxNumCust: 65,
 avgNumCookiesCust: 6.3,
 avgSimCookies: [],
 
-};
-
-firstPikeRandCust = function(){
-return Math.floor(Math.random() * (65 - 23) + 23);
-};
-console.log(firstPikeRandCust());
-
-
-var firstPikeSimSales = firstPikeRandCust() * firstPike.avgNumCookiesCust;
-console.log(firstPikeSimSales);
-for (i = 0; i < 15; i++) {
-
-  var firstPikeEachHrSales = firstPike.avgNumCookiesCust * firstPike.avgSimCookies;
-  return avgSimCookies
+firstPikeRandCust: function(){
+return Math.floor(Math.random() * (this.maxNumCust - this.minNumCust) + this.minNumCust);
 }
+};
+console.log(firstPike.firstPikeRandCust());
 
-//var 1stPikeSimSales = 1stPikeRandCust * 1stPike.avgNumCookiesCust;
-//console.log(1stPikeSimSales);
-
+  for (var i = 0; i < 15; i++) {
+    var firstPikeEachHrSales = Math.ceil(firstPike.firstPikeRandCust() * firstPike.avgNumCookiesCust);
+    firstPike.avgSimCookies.push(firstPikeEachHrSales);
+   console.log(firstPikeEachHrSales);
+  }
+}
 
 var SeaTac = {
 name: 'SeaTac Airport',
