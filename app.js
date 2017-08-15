@@ -6,21 +6,29 @@ minNumCust: 23,
 maxNumCust: 65,
 avgNumCookiesCust: 6.3,
 avgSimCookies: [],
-hoursOp: ['6 AM: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: ']
+hoursOp: ['6 AM: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '],
+
   firstPikeRandCust: function() {
   return Math.floor(Math.random() * (this.maxNumCust - this.minNumCust) + this.minNumCust);
   },
 
   firstPikeEachHrSales: function () {
-  for (var i = 0; i < 15; i++) {
+  for (var i = 0; i < this.hoursOp.length; i++) {
     var firstPikeEachHrSales = Math.ceil(this.firstPikeRandCust() * this.avgNumCookiesCust);
     this.avgSimCookies.push(firstPikeEachHrSales);
    console.log(firstPikeEachHrSales);
   }
-  }
+}
 };
 firstPike.firstPikeEachHrSales();
 firstPike.avgSimCookies;
+firstPike.hoursOp[];
+
+for (var i = 0; i < 20; i++) {
+  var newLi = document.createElement('li');
+  newLi.innerText = firstPike.hoursOp[i] + firstPike.avgSimCookies[i] + '.'; // <--- if you want to change the inner text
+  list.appendChild(newLi);
+}
 
 var SeaTac = {
 name: 'SeaTac Airport',
