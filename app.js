@@ -25,7 +25,7 @@ total: 0,
     for (var i = 0; i < this.hoursOp.length; i++) {
     var pikeRandomSales = this.firstPikeEachHrSales();
     this.avgSimCookies.push(this.hoursOp[i] + pikeRandomSales + ' cookies');
-    //console.log(this.firstPikeEachHrSales());
+    console.log(this.firstPikeEachHrSales());
 
     this.total+=pikeRandomSales;
     //console.log(pikeRandomSales);
