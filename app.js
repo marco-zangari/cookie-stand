@@ -13,35 +13,36 @@ function CookieStore(name, minCust, maxCust, avgCookies) {
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     };
   this.eachHrSales = function() {
-    this.avgSimCookies = [];
+    //this.avgSimCookies = [];
     for (var i = 0; i < hours.length; i++) {
       var hrSales = Math.ceil(this.randCust() * this.avgCookies);
       this.avgSimCookies.push(hrSales);
       }
     };
   this.salesReport = function () {
-    this.eachHrSales();
     for (var i = 0; i < hours.length; i++) {
       var salesList = document.getElementById('list');
       var listItems = document.createElement('li');
-      listItems.innerText = hours[i] + this.avgSimCookies[i] + ' cookies.';
+      listItems.innerText = hours[i] + this.avgSimCookies[i];
       salesList.appendChild(listItems);
+      //return listItems.innerText;
       }
     };
 
   this.cookieTable = function () {
-    var table = document.getElementbyId('salesTable');
-    var storesArray = [];
+    var tableRow = document.getElementById('salesTable');
+    this.eachHrSales();
+//    var storesArray = [[document.createElement('tr']];
     for (var i = 0; i < this.name.length; i++) {
       var row = document.createElement('tr');
       for (var j = 0; j < hours.length; j++) {
-        var td = document.CreateElement('td');
-        td.innerText = this.name[i].salesReport[j];
-        };
-      };
-    }
-        row.appendChild(td);
-        table.appendChild(row);
+        var td = document.createElement('td');
+        td.innerText = this.salesReport();
+        tableRow.appendChild(td);
+  //      tableRow.appendChild(row);
+        }
+      }
+    };
   }
 
 var pike = new CookieStore ('1st and Pike', 23, 65, 6.3);
@@ -50,8 +51,10 @@ var seattlectr = new CookieStore ('Seattle Center', 11, 38, 3.7);
 var capitol = new CookieStore ('Capitol Hill', 20, 38, 2.3);
 var alki = new CookieStore ('Alki', 2, 16, 4.6);
 
-pike.salesReport();
-seatac.salesReport();
-seattlectr.salesReport();
-capitol.salesReport();
-alki.salesReport();
+//pike.salesReport();
+//seatac.salesReport();
+//seattlectr.salesReport();
+//capitol.salesReport();
+//alki.salesReport();
+
+//pike.cookieTable();
