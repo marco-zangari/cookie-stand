@@ -19,27 +19,26 @@ function CookieStore(name, minCust, maxCust, avgCookies) {
       this.avgSimCookies.push(hrSales);
       }
     };
-  this.salesReport = function () {
-    for (var i = 0; i < hours.length; i++) {
-      var salesList = document.getElementById('list');
-      var listItems = document.createElement('li');
-      listItems.innerText = hours[i] + this.avgSimCookies[i];
-      salesList.appendChild(listItems);
-      //return listItems.innerText;
-      }
-    };
+// this.salesReport = function () {
+//     for (var i = 0; i < hours.length; i++) {
+//       var salesList = document.getElementById('list');
+//       var listItems = document.createElement('li');
+//       listItems.innerText = hours[i] + this.avgSimCookies[i];
+//       salesList.appendChild(listItems);
+//       return listItems.innerText;
+//       }
+//     };
 
   this.cookieTable = function () {
     var tableRow = document.getElementById('salesTable');
-    this.eachHrSales();
-//    var storesArray = [[document.createElement('tr']];
+    var storesArray = ['pike', 'seatac', 'seattlectr', 'capitol', 'alki'];
     for (var i = 0; i < this.name.length; i++) {
       var row = document.createElement('tr');
       for (var j = 0; j < hours.length; j++) {
         var td = document.createElement('td');
-        td.innerText = this.salesReport();
+        td.innerText = storesArray[i].sales[j];
         tableRow.appendChild(td);
-  //      tableRow.appendChild(row);
+        tableRow.appendChild(row);
         }
       }
     };
@@ -57,4 +56,4 @@ var alki = new CookieStore ('Alki', 2, 16, 4.6);
 //capitol.salesReport();
 //alki.salesReport();
 
-//pike.cookieTable();
+pike.cookieTable();
