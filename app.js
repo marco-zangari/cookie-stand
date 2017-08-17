@@ -31,17 +31,18 @@ function CookieStore(name, minCust, maxCust, avgCookies) {
 
   this.cookieTable = function () {
     var storesArray = ['pike', 'seatac', 'seattlectr', 'capitol', 'alki'];
-    var table = document.getElementById('salesTable');
-    var firstRow = document.createElement('tr');
-    table.appendChild(firstRow);
-
-    
-    firstRow.innerText = storesArray[i];
-    tableRow.appendChild
-
     for (var i = 0; i < storesArray.length; i++) {
-      var row = document.createElement('tr');
-      tr.innerText.appendChild(storesArray);
+      var table = document.getElementById('salesTable');
+      var firstRow = document.createElement('tr');
+      table.appendChild(firstRow);
+
+      var salesData = document.createElement('td');
+      salesData.innerText = storesArray[i];
+      firstRow.appendChild(salesData);
+
+
+      // var row = document.createElement('tr');
+      // tr.innerText.appendChild(storesArray);
 
 
       // for (var j = 0; j < hours.length; j++) {
