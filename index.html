@@ -7,5 +7,87 @@
   <body>
 <h1>Pat's Salmon Cookies</h1>
   </body>
+  <form id="theForm">
+      <table>
+        <thead>
+          <th class="thead">Enter a New Store</th>
+        </thead>
+        <tr>
+          <td><label for="title">New Store</label></td>
+          <td><input type="text" name="title" class="field" placeholder="New Store Name Here"/></td>
+        </tr>
+        <tr>
+          <td><label for="title">Minimum Customer Number</label></td>
+          <td><input type="number" name="minCust" class="field" placeholder="Minimum Customer Here" required id="minCust"/></td>
+        </tr>
+        <tr>
+          <td><label for="title">Maximum Customer Number</label></td>
+          <td><input type="number" name="maxCust" class="field" placeholder="Maximum Customer Here" required id = "maxCust"/></td>
+        </tr>
+        <tr>
+          <td><label for="title">Average Cookies<label></td>
+          <td><input type="number" name="avgCookies" step="0.1" class="field" placeholder="Average Cookies Here" required id = "avgCookies"/></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+          <td><input type="button" name="button" value="button" id='button'>Add New Store</button></td>
+        </tr>
+      </table>
+    </form>
+
+
+        <!-- <tr>
+          <td><label for="password">Sekret: </label></td>
+          <td><input type="password" name="password" class="field" /></td>
+        </tr> -->
+        <!-- <tr>
+          <td><label for="radio">Choose one of these:</label></td>
+          <td>
+            <input type="radio" name="choice" value="red" />Red
+            <input type="radio" name="choice" value="blue" checked />Blue
+            <input type="radio" name="choice" value="green" />Green
+          </td>
+        </tr> -->
+        <!-- <tr>
+          <td><label for="theCheckbox">Choose as many as you like:</label></td>
+          <td>
+            <input type="checkbox" name="theCheckbox" value="steak" />Steak
+            <input type="checkbox" name="theCheckbox" value="eggs" checked disabled />Eggs
+            <input type="checkbox" name="theCheckbox" value="salad" />Salad
+          </td>
+        </tr>
+        <tr>
+          <td><label for="dropdown">Choose one:</label></td>
+          <td>
+            <select name="dropdown">
+              <option value="" disabled>---Select One of These---</option>
+              <option value="foo">Foo</option>
+              <option value="bar">Bar</option>
+              <option value="bang">Bang</option>
+              <option value="bash" disabled>Bash</option>
+            </select>
+            *
+          </td>
+        </tr>
+        <tr>
+          <td><label for="multibox">Choose one or more:</label></td>
+          <td>
+            <select name="multibox" multiple>
+              <option value="" selected>---Select One or More of These---</option>
+              <option value="foo">Foo</option>
+              <option value="bar">Bar</option>
+              <option value="bang">Bang</option>
+              <option value="bash" disabled>Bash</option>
+            </select>
+          </td>
+        </tr> -->
+        <!-- <tr>
+          <td><label for="date">Post Date: </label></td>
+          <td><input type="date" name="date" class="field" placeholder="Write your date here" /></td>
+        </tr>
+        <!-- -->
+
+
   <script src = "app.js" type="text/javascript"></script>
 </html>
