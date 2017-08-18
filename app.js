@@ -13,17 +13,13 @@ function CookieStore(name, minCust, maxCust, avgCookies) {
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     };
   this.eachHrSales = function() {
-    //this.avgSimCookies = [];
     for (var i = 0; i < hours.length; i++) {
       var hrSales = Math.ceil(this.randCust() * this.avgCookies);
       this.avgSimCookies.push(hrSales);
       }
     };
 
-
   this.cookieTable = function () {
-    //var storesArray = ['pike', 'seatac', 'seattlectr', 'capitol', 'alki'];
-    //for (var i = 0; i < storesArray.length; i++) {
       var table = document.getElementById('salesTable');
       var firstRow = document.createElement('tr');
       table.appendChild(firstRow);
@@ -39,7 +35,6 @@ function CookieStore(name, minCust, maxCust, avgCookies) {
         salesData.innerText = this.avgSimCookies[j];
         firstRow.appendChild(salesData);
 
-    //  }
     };
   }
 }
@@ -49,24 +44,23 @@ var seattlectr = new CookieStore ('Seattle Center', 11, 38, 3.7);
 var capitol = new CookieStore ('Capitol Hill', 20, 38, 2.3);
 var alki = new CookieStore ('Alki', 2, 16, 4.6);
 
-//pike.salesReport();
-//seatac.salesReport();
-//seattlectr.salesReport();
-//capitol.salesReport();
-//alki.salesReport();
-
 pike.cookieTable();
 seatac.cookieTable();
 seattlectr.cookieTable();
 capitol.cookieTable();
 alki.cookieTable();
 
-// this.salesReport = function () {
-//     for (var i = 0; i < hours.length; i++) {
-//       var salesList = document.getElementById('list');
-//       var listItems = document.createElement('li');
-//       listItems.innerText = hours[i] + this.avgSimCookies[i];
-//       salesList.appendChild(listItems);
-//       return listItems.innerText;
-//       }
-//     }
+function harvestAndMakeNewStore(event) {
+  event.preventDefault();
+  var name = this.elements['name'].value;
+  var minCust = parseInt(this.elements['minCust'].value);
+  var maxCust = parseInt(this.elements['maxCust'].value);
+  var avgCookies = parseFloat(this.elements['avgCookies'].value);
+  var newStore = new CookieStore(name, minCust, maxCust, avgCookies);
+  console.log(newStore.name);
+  newStore.cookieTable();
+};
+
+var form = document.getElementById('theForm');
+form.addEventListener('submit',harvestAndMakeNewStore);
+form.reset();

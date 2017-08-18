@@ -7,15 +7,42 @@
   <body>
 <h1>Daily Projections Report: Pat's Salmon Cookies</h1>
     <p>These are the projected sales reports for all Salmon Cookie shops</p>
-<table>
-  <th></th>
-  <tbody id='salesTable'>
+    <table>
+      <th></th>
+      <tbody id='salesTable'>
 
-  </tbody>
-  <tfoot></tfoot>
-</table>
-<th></th>
-        <ul id='list'></ul>
+      </tbody>
+      <tfoot></tfoot>
+    </table>
+    <ul id='list'></ul>
+    <form id="theForm">
+        <table>
+          <thead>
+            <th class="thead">Enter a New Store</th>
+          </thead>
+          <tr>
+            <td><label for="title">Name</label></td>
+            <td><input type="text" name="name" class="name" placeholder="New Store Name Here"/></td>
+          </tr>
+          <tr>
+            <td><label for="title">Minimum Customer Number</label></td>
+            <td><input type="number" name="minCust" class="field" placeholder="Minimum Customer Here" required id="minCust"/></td>
+          </tr>
+          <tr>
+            <td><label for="title">Maximum Customer Number</label></td>
+            <td><input type="number" name="maxCust" class="field" placeholder="Maximum Customer Here" required id = "maxCust"/></td>
+          </tr>
+          <tr>
+            <td><label for="title">Average Cookies<label></td>
+            <td><input type="number" name="avgCookies" step="0.1" class="field" placeholder="Average Cookies Here" required id = "avgCookies"/></td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+            <td><input type="submit" name="button" value="button" id='submit'>Add New Store</button></td>
+          </tr>
+        </table>
+      </form>
   </body>
   <script src = "app.js" type="text/javascript"></script>
 </html>
