@@ -145,7 +145,7 @@ salesReport: function () {
 };
 capHill.salesReport();
 
-var Alki = {
+var alki = {
   name: 'Alki',
   minCust: 2,
   maxCust: 16,
@@ -154,6 +154,29 @@ var Alki = {
   hoursOp: ['6 am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
   total: 0,
 
-
-
+randCust: function () {
+  return Math.floor(Math.random() * ((this.maxCust - this.minCust) + this.minCust));
+  },
+eachHrSales: function () {
+  this.avgSimCookies = [];
+  this.total = 0;
+  for (var i = 0; i < this.hoursOp.length; i++) {
+      var hrSales = Math.floor(this.randCust() * this.avgCookiesCust);
+  this.avgSimCookies.push(hrSales);
+  this.total += hrSales;
+    }
+  },
+salesReport: function () {
+  this.eachHrSales();
+  for (var i = 0; i < this.hoursOp.length; i++) {
+    var sales = document.getElementById('salesAlki');
+    var salesReport = document.createElement('ul');
+    salesReport.innerText = this.hoursOp[i] + this.avgSimCookies[i] + ' cookies';
+    sales.appendChild(salesReport);
+    }
+    var salesTotal = document.createElement('ul');
+    salesTotal.innerText = 'Total: ' + this.total + ' cookies';
+    sales.appendChild(salesTotal);
+  },
 };
+alki.salesReport();
