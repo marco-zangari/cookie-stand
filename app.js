@@ -18,6 +18,7 @@ function CookieStore(name, minCust, maxCust, avgCookies) {
       var hrSales = Math.ceil(this.randCust() * this.avgCookies);
       this.avgSimCookies.push(hrSales);
       }
+      this.total += hrSales;
     };
 
   this.cookieTable = function () {
