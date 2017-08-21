@@ -18,6 +18,7 @@ function CookieStore(name, minCust, maxCust, avgCookies) {
       var hrSales = Math.ceil(this.randCust() * this.avgCookies);
       this.avgSimCookies.push(hrSales);
       }
+      this.total += hrSales;
     };
 
   this.cookieTable = function () {
@@ -37,7 +38,8 @@ function CookieStore(name, minCust, maxCust, avgCookies) {
         firstRow.appendChild(salesData);
           }
         };
-      };
+    };
+
 
 var pike = new CookieStore ('1st and Pike', 23, 65, 6.3);
 var seatac = new CookieStore ('SeaTac Airport', 3, 24, 1.2);
@@ -66,6 +68,10 @@ var footerMaker = function () {
   var firstCell = document.createElement('td');
   firstCell.innerText = 'Totals';
   footerRow.appendChild(firstCell);
+
+  var totals = document.createElement('td');
+  totals.innerText = CookieStore.total + CookieStore;
+  footerRow.appendChild(totals);
 };
 footerMaker();
 
