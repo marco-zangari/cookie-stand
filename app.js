@@ -37,7 +37,7 @@ function CookieStore(name, minCust, maxCust, avgCookies) {
         firstRow.appendChild(salesData);
           }
         };
-};
+      };
 
 var pike = new CookieStore ('1st and Pike', 23, 65, 6.3);
 var seatac = new CookieStore ('SeaTac Airport', 3, 24, 1.2);
@@ -59,8 +59,15 @@ var headerMaker = function () {
 headerMaker();
 
 var footerMaker = function () {
+  var footerRow = document.getElementById('totalRow');
+  var totalData = document.createElement('tr');
+  footerRow.appendChild(totalData);
 
+  var firstCell = document.createElement('td');
+  firstCell.innerText = 'Totals';
+  footerRow.appendChild(firstCell);
 };
+footerMaker();
 
 pike.cookieTable();
 seatac.cookieTable();
